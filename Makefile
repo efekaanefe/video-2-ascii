@@ -1,4 +1,4 @@
-CC=g++
+CC=gcc
 CFLAGS = `pkg-config --cflags opencv4`
 LIBS = `pkg-config --libs opencv4`
 

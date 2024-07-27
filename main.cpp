@@ -1,42 +1,43 @@
 #include <iostream>
-#include <opencv2/opencv.hpp>
+/*#include <opencv2/opencv.hpp>*/
 /*#include <opencv2/core/core.hpp>*/
 /*#include <opencv2/highgui/highgui.hpp>*/
+#include <opencv4/opencv2/opencv.hpp>
 
 using namespace cv;
 using namespace std;
 
-int main(){
+int main() {
 
-	string filename = "video.mp4";
-    VideoCapture cap(filename);
+  string filename = "video.mp4";
+  VideoCapture cap(filename);
 
-	if(!cap.isOpened()){
-		cout << "Error opening video stream or file" << endl;
-		return -1;
-	}
-   
-	while(1){
+  if (!cap.isOpened()) {
+    cout << "Error opening video stream or file" << endl;
+    return -1;
+  }
 
-		Mat frame;
-		// Capture frame-by-frame
-		cap >> frame;
+  while (1) {
 
-		// If the frame is empty, break immediately
-		if (frame.empty())
-		  break;
+    Mat frame;
+    // Capture frame-by-frame
+    cap >> frame;
 
-		// Display the resulting frame
-		imshow( "Frame", frame );
+    // If the frame is empty, break immediately
+    if (frame.empty())
+      break;
 
-		// Press  ESC on keyboard to exit
-		char c=(char)waitKey(25);
-		if(c==27)
-		  break;
-	}
-		  
-	cap.release();
-	destroyAllWindows();
+    // Display the resulting frame
+    imshow("Frame", frame);
 
-	return 0;
+    // Press  ESC on keyboard to exit
+    char c = (char)waitKey(25);
+    if (c == 27)
+      break;
+  }
+
+  cap.release();
+  destroyAllWindows();
+
+  return 0;
 }
