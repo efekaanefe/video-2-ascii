@@ -1,12 +1,6 @@
-#include <cmath>
 #include <iostream>
 #include <opencv4/opencv2/core/mat.hpp>
-#include <opencv4/opencv2/highgui.hpp>
 #include <opencv4/opencv2/opencv.hpp>
-#include <opencv4/opencv2/videoio.hpp>
-#include <ostream>
-#include <string>
-#include <strings.h>
 #include <unistd.h>
 
 const std::string ASCII_CHARS = "@%#*+=-:. ";
